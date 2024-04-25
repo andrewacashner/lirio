@@ -1,0 +1,41 @@
+
+(make-music
+  'SequentialMusic
+  'elements
+  (list (make-music
+          'ContextSpeccedMusic
+          'context-type
+          'Bottom
+          'element
+          (make-music
+            'OverrideProperty
+            'pop-first
+            #t
+            'grob-value
+            1
+            'grob-property-path
+            (list (quote duration-log))
+            'symbol
+            'NoteHead))
+        (make-music
+          'ContextSpeccedMusic
+          'context-type
+          'Bottom
+          'element
+          (make-music
+            'OverrideProperty
+            'pop-first
+            #t
+            'grob-value
+            3
+            'grob-property-path
+            (list (quote duration-log))
+            'symbol
+            'Stem))
+        (make-music
+          'NoteEvent
+          'pitch
+          (ly:make-pitch 1 1)
+          'duration
+          (ly:make-duration 2))))
+
